@@ -16,7 +16,31 @@ $backcolor: #131313;
   width: calc(100vw - 25px);
   height: calc(100vh - 25px);
   margin: 12.5px;
-  background-color: red;
+  background-image: url(wallpaper.png);
+  background-size: cover;
+  background-position: center;
   position: absolute;
   border-radius: 40px;
+
+  #navbar {
+    width: calc(100% - 50px);
+    margin: 25px;
+    height: 95px;
+    background-color: $backcolor;
+    border-radius: 20px;
+    filter: blur(40);
+    opacity: 80%;
+
+    display: flex;
+    align-items: center;
+
+    .navbarbtn{
+      background-color: blue;
+      margin-left: 8px;
+      height: calc(100% - 8px);
+      color: white;
+      text-align: center;
+      text-justify: center;
+    }
+  }
 }
