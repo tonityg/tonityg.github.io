@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -32,12 +33,16 @@
   align-items: center;
 }
 #background #navbar .navbarbtn {
-  background-color: blue;
-  margin-left: 8px;
-  height: calc(100% - 8px);
+  margin-left: 10.75px;
+  padding: 21.5px;
+  border-radius: 15px;
+  font-size: 26px;
   color: white;
   text-align: center;
-  text-justify: center;
+  font-family: "Quicksand";
+}
+#background #navbar .activebtn {
+  background-color: #1e8dcb;
 }
 
 /*# sourceMappingURL=style.css.map */
