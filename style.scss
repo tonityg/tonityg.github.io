@@ -5,6 +5,8 @@ $backcolor: #131313;
 * {
   padding: 0;
   margin: 0;
+  user-select: none;
+  overflow: hidden;
 }
 
 #main {
@@ -33,6 +35,9 @@ $backcolor: #131313;
     filter: blur(40);
     opacity: 80%;
 
+    position: relative;
+    z-index: 1;
+
     display: flex;
     align-items: center;
 
@@ -44,10 +49,27 @@ $backcolor: #131313;
       color: white;
       text-align: center;
       font-family: "Quicksand";
+      cursor: pointer;
     }
 
     .activebtn {
       background-color: #1e8dcb;
     }
   }
+}
+
+#projects {
+  position: absolute;
+
+  visibility: hidden;
+  bottom: -100vh;
+
+  transition: bottom 0.25s ease-out;
+
+  left: 25px;
+  width: calc(100% - 50px);
+  height: calc(100% - 170px);
+  background-color: black;
+  opacity: 80%;
+  border-radius: 20px;
 }
