@@ -50,10 +50,15 @@ $backcolor: #131313;
       text-align: center;
       font-family: "Quicksand";
       cursor: pointer;
+
+      border: 2px solid transparent;
+
+      transition: border 0.1s ease-in-out, background-color 0.15s ease-in-out;
     }
 
     .activebtn {
       background-color: #1e8dcb;
+      border: #1e8dcb solid 2px;
     }
   }
 }
@@ -61,15 +66,23 @@ $backcolor: #131313;
 #projects {
   position: absolute;
 
-  visibility: hidden;
-  bottom: -100vh;
+  pointer-events: none;
+  transform: scale(0.2);
+  opacity: 0;
 
-  transition: bottom 0.25s ease-out;
+  transition: transform 0.25s ease-in-out, opacity 0.1s ease-in-out;
 
   left: 25px;
   width: calc(100% - 50px);
   height: calc(100% - 170px);
-  background-color: black;
-  opacity: 80%;
+  background-color: rgba(0, 0, 0, 1);
   border-radius: 20px;
+
+  .project {
+    width: 15%;
+    height: 30%;
+    background-color: rgb(70, 70, 70);
+    border-radius: 20px;
+    margin: 25px 25px;
+  }
 }

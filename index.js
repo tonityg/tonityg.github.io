@@ -5,12 +5,28 @@ const competenceBtn = document.getElementById("competencebtn")
 
 const projectsMenu = document.getElementById("projects")
 
-projectBtn.addEventListener("click", () => {
-    projectBtn.classList.add("activebtn")
-    competenceBtn.classList.remove("activebtn")
+let openProjectMenu = false
 
-    projectsMenu.style.visibility = "visible"
-    projectsMenu.style.bottom = "25px";
+projectBtn.addEventListener("click", () => {
+    if (!openProjectMenu) {
+        projectBtn.classList.add("activebtn")
+        competenceBtn.classList.remove("activebtn")
+
+        projectsMenu.style.pointerEvents = "all"
+        projectsMenu.style.transform = "scale(1)";
+        projectsMenu.style.opacity = "0.8";
+
+        openProjectMenu = true
+    } else {
+        projectBtn.classList.remove("activebtn")
+
+        projectsMenu.style.pointerEvents = "none"
+        projectsMenu.style.transform = "scale(0.2)";
+        projectsMenu.style.opacity = "0";
+
+        openProjectMenu = false
+    }
+
 })
 
 competenceBtn.addEventListener("click", () => {
