@@ -7,6 +7,7 @@ $backcolor: #131313;
   margin: 0;
   user-select: none;
   overflow: hidden;
+  font-family: "Quicksand";
 }
 
 #main {
@@ -48,7 +49,6 @@ $backcolor: #131313;
       font-size: 26px;
       color: white;
       text-align: center;
-      font-family: "Quicksand";
       cursor: pointer;
 
       border: 2px solid transparent;
@@ -70,7 +70,7 @@ $backcolor: #131313;
   transform: scale(0.2);
   opacity: 0;
 
-  transition: transform 0.25s ease-in-out, opacity 0.1s ease-in-out;
+  transition: transform 0.2s ease-in-out, opacity 0.1s ease-in-out;
 
   left: 25px;
   width: calc(100% - 50px);
@@ -78,11 +78,70 @@ $backcolor: #131313;
   background-color: rgba(0, 0, 0, 1);
   border-radius: 20px;
 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
   .project {
     width: 15%;
     height: 30%;
-    background-color: rgb(70, 70, 70);
+
+    background-size: cover;
+    background-position: 50%;
     border-radius: 20px;
     margin: 25px 25px;
+    overflow: visible;
+
+    cursor: pointer;
+
+    transition: transform 0.05s;
+
+    &:hover {
+      transform: scale(1.015);
+    }
+
+    p {
+      color: white;
+      position: relative;
+      font-size: 1.5rem;
+      text-align: center;
+      width: 100%;
+      bottom: calc(-100% - 5px);
+    }
+  }
+
+  #stuffindustry {
+    background-image: url("https://img.itch.zone/aW1nLzk4NDQ5NTEucG5n/315x250%23c/41pJ2b.png");
+  }
+
+  #patchthebugs {
+    background-image: url("https://img.itch.zone/aW1nLzkyMjY3NTgucG5n/315x250%23c/U%2FrujO.png");
+  }
+}
+
+.popup {
+  width: fit-content;
+  max-width: 20%;
+  padding: 15px;
+  height: fit-content;
+  background-color: #131313;
+  position: absolute;
+  z-index: 10;
+  color: white;
+  border-radius: 10px;
+  visibility: hidden;
+
+  .popuptitle {
+    text-align: center;
+    text-decoration: overline;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding-bottom: 20px;
+  }
+
+  .popupbody {
+    font-size: 1.05rem;
+    text-align: center;
   }
 }
