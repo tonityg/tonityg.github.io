@@ -21,7 +21,6 @@ $backcolor: #131313;
   width: calc(100vw - 25px);
   height: calc(100vh - 25px);
   margin: 12.5px;
-  background-image: url(wallpaper.png);
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -33,8 +32,6 @@ $backcolor: #131313;
     height: 95px;
     background-color: $backcolor;
     border-radius: 20px;
-    filter: blur(40);
-    opacity: 80%;
 
     position: relative;
     z-index: 1;
@@ -75,7 +72,7 @@ $backcolor: #131313;
   left: 25px;
   width: calc(100% - 50px);
   height: calc(100% - 170px);
-  background-color: rgba(0, 0, 0, 1);
+  background-color: $backcolor;
   border-radius: 20px;
 
   display: flex;
@@ -118,6 +115,10 @@ $backcolor: #131313;
   #patchthebugs {
     background-image: url("https://img.itch.zone/aW1nLzkyMjY3NTgucG5n/315x250%23c/U%2FrujO.png");
   }
+
+  #mastermind {
+    background-image: url("https://github.com/Burstyx/Mastermind/blob/master/Assets/Img/AndroidIcon.png?raw=true");
+  }
 }
 
 .popup {
@@ -125,7 +126,8 @@ $backcolor: #131313;
   max-width: 20%;
   padding: 15px;
   height: fit-content;
-  background-color: #131313;
+  background-color: #090909;
+  opacity: 98%;
   position: absolute;
   z-index: 10;
   color: white;

@@ -1,43 +1,137 @@
 console.log("Initialisé !");
 
 const projectBtn = document.getElementById("projectbtn")
-const competenceBtn = document.getElementById("competencebtn")
+const bioBtn = document.getElementById("biobtn")
+const contactBtn = document.getElementById("contactbtn")
 
 const projectsMenu = document.getElementById("projects")
+const bioMenu = document.getElementById("bio")
+const contactMenu = document.getElementById("contact")
 
-let openProjectMenu = false
+// SET RANDOM WALLPAPER
+const rand = Math.floor((Math.random() * 5) + 1 - 0.0001)
+const background = document.getElementById("background")
 
+background.style.setProperty("background-image", `url(./assets/wallpaper0${rand}.jpg)`)
+
+// ADD LOGIC TO MENU BAR BUTTONS
 projectBtn.addEventListener("click", () => {
-    if (!openProjectMenu) {
-        projectBtn.classList.add("activebtn")
-        competenceBtn.classList.remove("activebtn")
+    const isActive = projectBtn.classList.contains("activebtn")
+    closeAllWindow()
 
+    if (isActive) {
+        openOrCloseProjectMenu(isActive)
+    }
+    else {
+        openOrCloseProjectMenu(isActive)
+    }
+})
+
+bioBtn.addEventListener("click", () => {
+    const isActive = bioBtn.classList.contains("activebtn")
+    closeAllWindow()
+
+    if (isActive) {
+        openOrCloseBioMenu(isActive)
+    }
+    else {
+        openOrCloseBioMenu(isActive)
+    }
+})
+
+contactBtn.addEventListener("click", () => {
+    const isActive = contactBtn.classList.contains("activebtn")
+    closeAllWindow()
+
+    if (isActive) {
+        openOrCloseContactMenu(isActive)
+    }
+    else {
+        openOrCloseContactMenu(isActive)
+    }
+})
+
+function closeAllWindow() {
+    openOrCloseProjectMenu(true)
+    openOrCloseContactMenu(true)
+    openOrCloseBioMenu(true)
+}
+
+function openOrCloseProjectMenu(opened) {
+    if (!opened) {
+        projectBtn.classList.add("activebtn")
         projectsMenu.style.pointerEvents = "all"
         projectsMenu.style.transform = "scale(1)";
-        projectsMenu.style.opacity = "0.8";
-
-        openProjectMenu = true
+        projectsMenu.style.opacity = "1";
     } else {
         projectBtn.classList.remove("activebtn")
-
         projectsMenu.style.pointerEvents = "none"
         projectsMenu.style.transform = "scale(0.5)";
         projectsMenu.style.opacity = "0";
-
-        openProjectMenu = false
     }
+}
 
-})
+function openOrCloseBioMenu(opened) {
+    if (!opened) {
+        bioBtn.classList.add("activebtn")
+        bioMenu.style.pointerEvents = "all"
+        bioMenu.style.transform = "scale(1)";
+        bioMenu.style.opacity = "1";
+    } else {
+        bioBtn.classList.remove("activebtn")
+        bioMenu.style.pointerEvents = "none"
+        bioMenu.style.transform = "scale(0.5)";
+        bioMenu.style.opacity = "0";
+    }
+}
 
-competenceBtn.addEventListener("click", () => {
-    competenceBtn.classList.add("activebtn")
-    projectBtn.classList.remove("activebtn")
-})
+function openOrCloseContactMenu(opened) {
+    if (!opened) {
+        contactBtn.classList.add("activebtn")
+        contactMenu.style.pointerEvents = "all"
+        contactMenu.style.transform = "scale(1)";
+        contactMenu.style.opacity = "1";
+    } else {
+        contactBtn.classList.remove("activebtn")
+        contactMenu.style.pointerEvents = "none"
+        contactMenu.style.transform = "scale(0.5)";
+        contactMenu.style.opacity = "0";
+    }
+}
+
+// projectBtn.addEventListener("click", () => {
+//     if (!openProjectMenu) {
+//         projectBtn.classList.add("activebtn")
+//         competenceBtn.classList.remove("activebtn")
+
+//         projectsMenu.style.pointerEvents = "all"
+//         projectsMenu.style.transform = "scale(1)";
+//         projectsMenu.style.opacity = "1";
+
+//         openProjectMenu = true
+//     } else {
+//         projectBtn.classList.remove("activebtn")
+
+//         projectsMenu.style.pointerEvents = "none"
+//         projectsMenu.style.transform = "scale(0.5)";
+//         projectsMenu.style.opacity = "0";
+
+//         openProjectMenu = false
+//     }
+// })
+
+// competenceBtn.addEventListener("click", () => {
+//     competenceBtn.classList.add("activebtn")
+//     projectBtn.classList.remove("activebtn")
+// })
+
+
+
+// LINK POPUP WITH PROJECT BUTTON
 
 const projects = document.getElementsByClassName("project")
 const popups = document.getElementsByClassName("popup")
 
-// Link popup with correct project button
 let projectRelatedPopup = new Map()
 
 for (let i = 0; i < projects.length; i++) {
