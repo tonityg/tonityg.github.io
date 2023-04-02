@@ -34,34 +34,32 @@ competenceBtn.addEventListener("click", () => {
     projectBtn.classList.remove("activebtn")
 })
 
-const stuffindustrypopup = document.getElementById("stuffindustrypopup")
-const patchthebugpopup = document.getElementById("patchthebugpopup")
+const projects = document.getElementsByClassName("project")
+const popups = document.getElementsByClassName("popup")
 
-const stuffIndustryButton = document.getElementById("stuffindustry")
-const pathTheBugButton = document.getElementById("patchthebugs")
+// Link popup with correct project button
+let projectRelatedPopup = new Map()
 
-stuffIndustryButton.addEventListener("click", () => {
-    window.open(stuffIndustryButton.getAttribute("custom_url"))
-})
+for (let i = 0; i < projects.length; i++) {
+    for (let j = 0; j < popups.length; j++) {
+        const projectElement = projects.item(i)
+        const popupElement = popups.item(j)
 
-stuffIndustryButton.addEventListener("mouseenter", () => {
-    setPopupCentered(stuffindustrypopup, stuffIndustryButton)
-})
+        const name = popupElement.id.slice(0, popupElement.id.indexOf("popup"))
 
-stuffIndustryButton.addEventListener("mouseleave", () => {
-    stuffindustrypopup.style.setProperty("visibility", "hidden")
-})
+        if (projectElement.id == name) {
+            projectRelatedPopup.set(projectElement.id, popupElement.id)
+        }
+    }
+}
 
-pathTheBugButton.addEventListener("click", () => {
-    window.open(patchthebugpopup.getAttribute("custom_url"))
-})
+projectRelatedPopup.forEach((val, key) => {
+    const popup = document.getElementById(val)
+    const project = document.getElementById(key)
 
-pathTheBugButton.addEventListener("mouseenter", () => {
-    setPopupCentered(patchthebugpopup, pathTheBugButton)
-})
-
-pathTheBugButton.addEventListener("mouseleave", () => {
-    patchthebugpopup.style.setProperty("visibility", "hidden")
+    project.addEventListener("click", () => window.open(project.getAttribute("custom_url")))
+    project.addEventListener("mouseenter", () => setPopupCentered(popup, project))
+    project.addEventListener("mouseleave", () => popup.style.setProperty("visibility", "hidden"))
 })
 
 function setPopupCentered(popup, button) {
