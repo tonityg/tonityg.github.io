@@ -2,11 +2,11 @@ console.log("Initialisé !");
 
 const projectBtn = document.getElementById("projectbtn")
 const bioBtn = document.getElementById("biobtn")
-const contactBtn = document.getElementById("contactbtn")
+// const contactBtn = document.getElementById("contactbtn")
 
 const projectsMenu = document.getElementById("projects")
 const bioMenu = document.getElementById("bio")
-const contactMenu = document.getElementById("contact")
+// const contactMenu = document.getElementById("contact")
 
 // SET RANDOM WALLPAPER
 const rand = Math.floor((Math.random() * 5) + 1 - 0.0001)
@@ -39,21 +39,21 @@ bioBtn.addEventListener("click", () => {
     }
 })
 
-contactBtn.addEventListener("click", () => {
-    const isActive = contactBtn.classList.contains("activebtn")
-    closeAllWindow()
+// contactBtn.addEventListener("click", () => {
+//     const isActive = contactBtn.classList.contains("activebtn")
+//     closeAllWindow()
 
-    if (isActive) {
-        openOrCloseContactMenu(isActive)
-    }
-    else {
-        openOrCloseContactMenu(isActive)
-    }
-})
+//     if (isActive) {
+//         openOrCloseContactMenu(isActive)
+//     }
+//     else {
+//         openOrCloseContactMenu(isActive)
+//     }
+// })
 
 function closeAllWindow() {
     openOrCloseProjectMenu(true)
-    openOrCloseContactMenu(true)
+    // openOrCloseContactMenu(true)
     openOrCloseBioMenu(true)
 }
 

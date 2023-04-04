@@ -151,12 +151,13 @@ $backcolor: #131313;
   #biobody {
     text-align: center;
     margin-top: 30px;
+    font-size: 1.1rem;
   }
 }
 
 .popup {
-  width: fit-content;
-  max-width: 20%;
+  max-width: 550px;
+  min-width: 0px;
   padding: 15px;
   height: fit-content;
   background-color: #090909;
@@ -171,12 +172,41 @@ $backcolor: #131313;
     text-align: center;
     text-decoration: overline;
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     padding-bottom: 20px;
   }
 
   .popupbody {
-    font-size: 1.05rem;
     text-align: center;
+  }
+}
+
+#reserror {
+  visibility: hidden;
+  z-index: 100;
+  position: absolute;
+  background-color: $backcolor;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  p {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  #reserror {
+    visibility: visible;
+    color: white;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  #reserror {
+    visibility: visible;
+    color: white;
   }
 }
