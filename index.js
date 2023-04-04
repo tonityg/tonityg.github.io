@@ -2,11 +2,9 @@ console.log("Initialisé !");
 
 const projectBtn = document.getElementById("projectbtn")
 const bioBtn = document.getElementById("biobtn")
-// const contactBtn = document.getElementById("contactbtn")
 
 const projectsMenu = document.getElementById("projects")
 const bioMenu = document.getElementById("bio")
-// const contactMenu = document.getElementById("contact")
 
 // SET RANDOM WALLPAPER
 const rand = Math.floor((Math.random() * 5) + 1 - 0.0001)
@@ -39,21 +37,21 @@ bioBtn.addEventListener("click", () => {
     }
 })
 
-// contactBtn.addEventListener("click", () => {
-//     const isActive = contactBtn.classList.contains("activebtn")
+// professionalProjectsBtn.addEventListener("click", () => {
+//     const isActive = professionalProjectsBtn.classList.contains("activebtn")
 //     closeAllWindow()
 
 //     if (isActive) {
-//         openOrCloseContactMenu(isActive)
+//         openOrCloseProfessionalProjectsMenu(isActive)
 //     }
 //     else {
-//         openOrCloseContactMenu(isActive)
+//         openOrCloseProfessionalProjectsMenu(isActive)
 //     }
 // })
 
 function closeAllWindow() {
     openOrCloseProjectMenu(true)
-    // openOrCloseContactMenu(true)
+    // openOrCloseProfessionalProjectsMenu(true)
     openOrCloseBioMenu(true)
 }
 
@@ -85,46 +83,19 @@ function openOrCloseBioMenu(opened) {
     }
 }
 
-function openOrCloseContactMenu(opened) {
-    if (!opened) {
-        contactBtn.classList.add("activebtn")
-        contactMenu.style.pointerEvents = "all"
-        contactMenu.style.transform = "scale(1)";
-        contactMenu.style.opacity = "1";
-    } else {
-        contactBtn.classList.remove("activebtn")
-        contactMenu.style.pointerEvents = "none"
-        contactMenu.style.transform = "scale(0.5)";
-        contactMenu.style.opacity = "0";
-    }
-}
-
-// projectBtn.addEventListener("click", () => {
-//     if (!openProjectMenu) {
-//         projectBtn.classList.add("activebtn")
-//         competenceBtn.classList.remove("activebtn")
-
-//         projectsMenu.style.pointerEvents = "all"
-//         projectsMenu.style.transform = "scale(1)";
-//         projectsMenu.style.opacity = "1";
-
-//         openProjectMenu = true
+// function openOrCloseProfessionalProjectsMenu(opened) {
+//     if (!opened) {
+//         professionalProjectsBtn.classList.add("activebtn")
+//         professionalprojectsMenu.style.pointerEvents = "all"
+//         professionalprojectsMenu.style.transform = "scale(1)";
+//         professionalprojectsMenu.style.opacity = "1";
 //     } else {
-//         projectBtn.classList.remove("activebtn")
-
-//         projectsMenu.style.pointerEvents = "none"
-//         projectsMenu.style.transform = "scale(0.5)";
-//         projectsMenu.style.opacity = "0";
-
-//         openProjectMenu = false
+//         professionalProjectsBtn.classList.remove("activebtn")
+//         professionalprojectsMenu.style.pointerEvents = "none"
+//         professionalprojectsMenu.style.transform = "scale(0.5)";
+//         professionalprojectsMenu.style.opacity = "0";
 //     }
-// })
-
-// competenceBtn.addEventListener("click", () => {
-//     competenceBtn.classList.add("activebtn")
-//     projectBtn.classList.remove("activebtn")
-// })
-
+// }
 
 
 // LINK POPUP WITH PROJECT BUTTON
