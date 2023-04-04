@@ -98,6 +98,30 @@
   background-image: url("https://github.com/Burstyx/Mastermind/blob/master/Assets/Img/AndroidIcon.png?raw=true");
 }
 
+#bio {
+  position: absolute;
+  pointer-events: none;
+  transform: scale(0.2);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.1s ease-in-out;
+  left: 360px;
+  width: calc(100% - 750px);
+  height: calc(100% - 350px);
+  padding: 15px;
+  background-color: #131313;
+  border-radius: 20px;
+  color: white;
+}
+#bio #biotitle {
+  font-size: 2rem;
+  margin-top: 15px;
+  text-align: center;
+}
+#bio #biobody {
+  text-align: center;
+  margin-top: 30px;
+}
+
 .popup {
   width: fit-content;
   max-width: 20%;
